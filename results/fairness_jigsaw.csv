@@ -1,0 +1,6 @@
+condition,name,jigsaw_flip_rate
+1,original_only (LR),0.0708
+2,raw_llm (LR),0.0613
+3,basap_filtered (LR),0.1038
+4,basap_balanced (LR),0.1038
+5,basap_balanced (SVM),0.0943

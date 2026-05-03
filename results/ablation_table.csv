@@ -1,0 +1,6 @@
+condition,name,f1_macro,classifier
+1,original_only (LR),0.8806,lr
+2,raw_llm (LR),0.8772,lr
+3,basap_filtered (LR),0.8829,lr
+4,basap_balanced (LR),0.8829,lr
+5,basap_balanced (SVM),0.8829,svm
