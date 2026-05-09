@@ -13,6 +13,8 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import classification_report, f1_score
 import os
 
@@ -46,6 +48,10 @@ def train_and_evaluate(train_df, condition_num, condition_name, classifier='lr')
 
     if classifier == 'svm':
         clf = SVC(kernel='rbf', C=1.0, probability=True, random_state=42)
+    elif classifier == 'rf':
+        clf = RandomForestClassifier(n_estimators=100, random_state=42)
+    elif classifier == 'nb':
+        clf = GaussianNB()
     else:
         clf = LogisticRegression(max_iter=1000, random_state=42)
 
@@ -151,3 +157,11 @@ train_and_evaluate(combined_c4, 4, 'basap_filtered_balanced', classifier='lr')
 # IMPROVEMENT: SVM with RBF kernel — typically outperforms LR on sentence embeddings
 print('\nTraining SVM classifier (Condition 5)...')
 train_and_evaluate(combined_c4, 5, 'basap_balanced_svm', classifier='svm')
+
+# ── Condition 6: Random Forest ──
+print('\nTraining Random Forest (Condition 6)...')
+train_and_evaluate(combined_c4, 6, 'basap_balanced_rf', classifier='rf')
+
+# ── Condition 7: Naive Bayes ──
+print('\nTraining Naive Bayes (Condition 7)...')
+train_and_evaluate(combined_c4, 7, 'basap_balanced_nb', classifier='nb')

@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 from sentence_transformers import SentenceTransformer
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import f1_score
 import os
 
@@ -77,6 +79,8 @@ train_dfs = {
     3: pd.concat([orig_df[['sentence', 'label']], filtered_df[['sentence', 'label']]]),
     4: pd.concat([orig_df[['sentence', 'label']], balanced_df[['sentence', 'label']]]),
     5: pd.concat([orig_df[['sentence', 'label']], balanced_df[['sentence', 'label']]]),
+    6: pd.concat([orig_df[['sentence', 'label']], balanced_df[['sentence', 'label']]]),
+    7: pd.concat([orig_df[['sentence', 'label']], balanced_df[['sentence', 'label']]]),
 }
 
 condition_names = {
@@ -85,9 +89,11 @@ condition_names = {
     3: 'basap_filtered\n(LR)',
     4: 'basap_balanced\n(LR)',
     5: 'basap_balanced\n(SVM)',
+    6: 'basap_balanced\n(RF)',
+    7: 'basap_balanced\n(NB)',
 }
 
-classifiers = {1: 'lr', 2: 'lr', 3: 'lr', 4: 'lr', 5: 'svm'}
+classifiers = {1: 'lr', 2: 'lr', 3: 'lr', 4: 'lr', 5: 'svm', 6: 'rf', 7: 'nb'}
 
 # ── PHASE 1: Performance ──
 print('\n=== PHASE 1: PERFORMANCE EVALUATION (SST-2) ===')
@@ -110,6 +116,10 @@ for cond_num, train_df in train_dfs.items():
 
     if classifiers[cond_num] == 'svm':
         clf = SVC(kernel='rbf', C=1.0, random_state=42)
+    elif classifiers[cond_num] == 'rf':
+        clf = RandomForestClassifier(n_estimators=100, random_state=42)
+    elif classifiers[cond_num] == 'nb':
+        clf = GaussianNB()
     else:
         clf = LogisticRegression(max_iter=1000, random_state=42)
 
@@ -133,7 +143,7 @@ print('\n=== ABLATION TABLE ===')
 print(results_df.to_string(index=False))
 
 # ── F1 Plot ──
-colors = ['#1f4e79', '#e74c3c', '#27ae60', '#2e75b6', '#8e44ad']
+colors = ['#1f4e79', '#e74c3c', '#27ae60', '#2e75b6', '#8e44ad', '#d35400', '#16a085']
 plt.figure(figsize=(11, 6))
 bars = plt.bar(results_df['name'], results_df['f1_macro'], color=colors)
 plt.ylim(0.70, 0.92)

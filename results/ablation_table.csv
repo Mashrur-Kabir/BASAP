@@ -4,3 +4,5 @@ condition,name,f1_macro,classifier
 3,basap_filtered (LR),0.8829,lr
 4,basap_balanced (LR),0.8829,lr
 5,basap_balanced (SVM),0.8829,svm
+6,basap_balanced (RF),0.8609,rf
+7,basap_balanced (NB),0.8713,nb

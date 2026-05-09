@@ -4,3 +4,5 @@ condition,name,jigsaw_flip_rate
 3,basap_filtered (LR),0.1038
 4,basap_balanced (LR),0.1038
 5,basap_balanced (SVM),0.0943
+6,basap_balanced (RF),0.2028
+7,basap_balanced (NB),0.0755
