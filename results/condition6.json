@@ -1,6 +1,0 @@
-{
-  "condition": 6,
-  "name": "basap_balanced_rf",
-  "f1_macro": 0.8609002880552645,
-  "classifier": "rf"
-}

@@ -1,0 +1,6 @@
+{
+  "condition": 3,
+  "name": "basap_filtered",
+  "f1_macro": 0.8875430977760232,
+  "classifier": "lr"
+}

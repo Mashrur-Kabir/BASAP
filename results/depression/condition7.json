@@ -1,0 +1,6 @@
+{
+  "condition": 7,
+  "name": "basap_balanced_nb",
+  "f1_macro": 0.9311181558451724,
+  "classifier": "nb"
+}

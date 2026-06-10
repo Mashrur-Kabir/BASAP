@@ -1,0 +1,6 @@
+{
+  "condition": 5,
+  "name": "basap_balanced_svm",
+  "f1_macro": 0.9624765478424016,
+  "classifier": "svm"
+}

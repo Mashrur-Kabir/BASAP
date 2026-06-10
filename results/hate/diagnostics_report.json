@@ -1,0 +1,34 @@
+{
+  "lexical_bias_original": {
+    "label_0": {
+      "male": 0.008709,
+      "female": 0.011085
+    },
+    "label_1": {
+      "male": 0.006057,
+      "female": 0.015556
+    }
+  },
+  "lexical_bias_synthetic": {
+    "label_1": {
+      "male": 0.005708,
+      "female": 0.007265
+    },
+    "label_0": {
+      "male": 0.0,
+      "female": 0.0
+    }
+  },
+  "ttr_original": 0.2531,
+  "ttr_synthetic": 0.1556,
+  "intra_similarity_synthetic": 0.13226129114627838,
+  "intra_similarity_original": 0.15637268126010895,
+  "repetitiveness_ratio": 0.85,
+  "label_mismatches": 23,
+  "mismatch_rate_pct": 6.5,
+  "total_synthetic": 356,
+  "gender_flip_rate_synthetic": 0.35,
+  "gender_sentences_tested": 20,
+  "age_flip_rate_synthetic": 0.5,
+  "age_sentences_tested": 2
+}

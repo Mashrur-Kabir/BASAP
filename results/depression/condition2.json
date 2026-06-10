@@ -1,0 +1,6 @@
+{
+  "condition": 2,
+  "name": "raw_llm_augmentation",
+  "f1_macro": 0.9499921862791061,
+  "classifier": "lr"
+}

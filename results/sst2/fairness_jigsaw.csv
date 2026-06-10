@@ -1,0 +1,8 @@
+condition,name,gender_flip_rate,age_flip_rate
+1,original_only (LR),0.0667,0.0417
+2,raw_llm (LR),0.0622,0.0
+3,basap_filtered (LR),0.0711,0.0
+4,basap_balanced (LR),0.0711,0.0
+5,basap_balanced (SVM),0.08,0.0
+6,basap_balanced (RF),0.2,0.25
+7,basap_balanced (NB),0.0444,0.0417

@@ -1,0 +1,8 @@
+condition,name,f1_macro,auc_roc,cohen_kappa,classifier
+1,original_only (LR),0.6867,0.7767,0.375,lr
+2,raw_llm (LR),0.6745,0.7736,0.35,lr
+3,basap_filtered (LR),0.706,0.7817,0.4125,lr
+4,basap_balanced (LR),0.706,0.7817,0.4125,lr
+5,basap_balanced (SVM),0.7187,0.8147,0.4375,svm
+6,basap_balanced (RF),0.6562,0.7448,0.3125,rf
+7,basap_balanced (NB),0.6687,0.7144,0.3375,nb
